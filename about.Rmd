@@ -1,13 +1,8 @@
 ---
-name: Katharine L. Leigh
-date: NULL
-profilepic: kat_pic.jpg
-www: kleigh@bren.usb.edu
-github: KatLeigh11
-linkedin: katharine-leigh-4821759a
-headcolor: 414141
-docname: CV/Resume
-output: vitae::awesomecv
+title: CV/Resume
+output:
+  html_document
+theme: cosmo
 ---
 
 ```{r setup, include=FALSE}
@@ -29,17 +24,159 @@ CSV <- read_csv("data_CV.csv") %>%
   group_by(section, subsection, subsubsection)
 
 CSV2 <- pivot_wider(CSV, names_from = category, values_from = content) %>% 
-  select(-tuna, -entity, -title)
+  select(-entity, -title)
 
+CSV_when <- as.data.frame(iconv(as.character(CSV2$when), from = "latin1", to = "ASCII", sub="-")) %>% ungroup() %>% droplevels()
+names(CSV_when) <- "when"
 
-
-CSVtest <- detailed_entries(data = CSV2, what = what, why = why, when = when, where = where, with = with)
-
-EDF_intern <- CSV2 %>% 
-  filter(section == "experience",
-         subsection == "edf",
-         subsubsection == "intern")
-EDF_intern
+CSV2 <- CSV2 %>%
+  select(-when) %>% 
+  cbind(CSV_when$when) %>% 
+  droplevels()
 
 ```
 
+# `r CSV$content[1]`
+
+ `r CSV$content[2]` | `r CSV$content[3]` | `r CSV$content[4]` | `r CSV$content[5]`
+
+## Education
+
+### `r CSV2$with[6]`
+
+`r CSV2$what[6]`
+
+`r CSV2$...9[6]`
+
+- GPA: `r CSV2$why[6][[1]][1]`
+
+- Specialization: `r CSV2$why[6][[1]][2]`
+
+- Foci: `r CSV2$why[6][[1]][3]` & Data Science
+
+
+### `r CSV2$with[7]`
+
+`r CSV2$what[7]`
+
+`r CSV2$...9[7]`
+
+- GPA: `r CSV2$why[7][[1]][2]`
+
+- Concentration:  `r CSV2$why[7][[1]][3]`
+
+- `r CSV2$why[7][[1]][4]`
+
+
+### `r CSV2$with[8]`
+
+`r CSV2$...9[8]`
+
+- GPA: `r CSV2$why[8][[1]][2]`
+
+- `r CSV2$why[8][[1]][1]`
+
+
+
+## `r CSV$content[23]`
+
+### `r CSV2$with[10]`
+
+`r CSV2$what[10]`
+
+`r CSV2$...9[10]`
+`r CSV2$where[10]`
+
+- `r CSV2$why[10][[1]][1]`
+
+- `r CSV2$why[10][[1]][2]`
+
+
+### `r CSV2$with[11]`
+
+`r CSV2$what[11]`
+
+`r CSV2$...9[11]`
+`r CSV2$where[11]`
+
+- `r CSV2$why[11][[1]][1]`
+
+- `r CSV2$why[11][[1]][2]`
+
+
+`r CSV2$what[12]`
+
+`r CSV2$...9[12]`
+`r CSV2$where[12]`
+
+- `r CSV2$why[12][[1]][1]`
+
+- `r CSV2$why[12][[1]][2]`
+
+
+`r CSV2$what[13]`
+
+`r CSV2$...9[13]`
+`r CSV2$where[13]`
+
+- `r CSV2$why[13][[1]][1]`
+
+
+### `r CSV2$with[14]`
+
+`r CSV2$what[14]`
+
+`r CSV2$...9[14]`
+`r CSV2$where[14]`
+
+- `r CSV2$why[14][[1]][1]`
+
+- `r CSV2$why[14][[1]][2]`
+
+`r CSV2$what[15]`
+
+`r CSV2$...9[15]`
+`r CSV2$where[15]`
+
+- `r CSV2$why[15][[1]][1]`
+
+- `r CSV2$why[15][[1]][2]`
+
+`r CSV2$what[16]`
+
+`r CSV2$...9[16]`
+`r CSV2$where[16]`
+
+- `r CSV2$why[16][[1]][1]`
+
+- `r CSV2$why[16][[1]][2]`
+
+
+### `r CSV2$subsection[17]`
+
+
+
+## `r CSV$content[67]`
+### `r CSV$content[68]`
+- `r CSV2$what[19][[1]][1]`
+- `r CSV2$what[19][[1]][2]`
+- `r CSV2$what[19][[1]][3]`
+- `r CSV2$what[19][[1]][4]`
+- `r CSV2$what[19][[1]][5]`
+- `r CSV2$what[19][[1]][6]`
+- `r CSV2$what[19][[1]][7]`
+- `r CSV2$what[19][[1]][8]`
+- `r CSV2$what[19][[1]][9]`
+
+### `r CSV$content[78]`
+- `r CSV2$what[20][[1]][1]`
+- `r CSV2$what[20][[1]][2]`
+- `r CSV2$what[20][[1]][3]`
+- `r CSV2$what[20][[1]][4]`
+- `r CSV2$what[20][[1]][5]`
+- `r CSV2$what[20][[1]][6]`
+- `r CSV2$what[20][[1]][7]`
+- `r CSV2$what[20][[1]][8]`
+- `r CSV2$what[20][[1]][9]`
+- `r CSV2$what[20][[1]][10]`
+- `r CSV2$what[20][[1]][11]`
