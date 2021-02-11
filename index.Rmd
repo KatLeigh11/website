@@ -1,8 +1,7 @@
 ---
 title: "Kat Leigh"
 image: "kat_pic.jpg"
-site: distill::distill_website
-  links:
+links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/katharine-leigh-4821759a/"
   - label: Twitter
@@ -12,6 +11,7 @@ site: distill::distill_website
   - label: Email
     url: "mailto:kleigh@bren.ucsb.edu"
 output:  postcards::jolla
+site: distill::distill_website
 ---
  
 I'm a Cornell University alumnus, and current second-year Masters student at the Bren School of Environmental Science & Management at the University of California Santa Barbara. Prior to Bren, I worked for The Nature Conservancy, Environmental Defense Fund, Cornell University, and Epic Software Systems in positions including project management and implementation, marketing, collaborative science development, public data accessibility, and community-based fisheries management. Recently, I came to Bren to hone my marine ecology skills, as well as focus on launching my business idea, Karang, a digital network that enables information flow for coastal communities and the seafood industry. After Bren, I hope to pursue an economics PhD to investigate some of the complexities of Karang. Ultimately, I aim to use Karang to shift the incentives operating in the blue economy to support efficient, equitable, and truly sustainable management of aquatic resources.

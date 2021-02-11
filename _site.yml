@@ -3,6 +3,7 @@ title: "KatsWebsite"
 description: |
   KatDescrip
 output_dir: "docs"
+theme: postcards.css
 navbar:
   right:
     - text: "Home"
@@ -12,4 +13,3 @@ navbar:
     - text: "Blog1"
       href: blog.html
 output: distill::distill_article
-theme: postcards.css
